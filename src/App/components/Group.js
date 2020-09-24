@@ -16,12 +16,19 @@ class Group extends Component {
             .catch(err => console.log(err))
     }
 
+    handleChangeGroupName = (event) => {
+        event.preventDefault();
+        if (event.keyCode === 13){
+
+        }
+    }
+
     GroupSection = (props) => {
         const { group } = props;
         return (
             <div className='group-section'>
                 <div className="input-section">
-                    <input className='group-name' defaultValue={group.name}></input>
+                    <input className='group-name' onKeyUp={this.handleChangeGroupName.bind(this, group.name)} defaultValue={group.name}></input>
                     <div className='group-teachers'>
                         {
                             group.trainerList.map((trainer) => (

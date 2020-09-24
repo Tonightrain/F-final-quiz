@@ -7,12 +7,12 @@ export function fetchTrainees() {
         })
 }
 
-export function addTrainee(Trainee) {
+export function addTrainee(trainee) {
     const url = 'http://localhost:8080/trainees';
     return fetch(url,{
         method:'POST',
         headers:{'Content-Type':'application/json;charset=utf-8'},
-        body:Trainee
+        body:JSON.stringify(trainee),
     })
         .then((response) => response.json())
         .catch((error) => error)
@@ -51,4 +51,21 @@ export function getGroup() {
     return fetch(url)
         .then((res) => res.json() )
         .catch((err) => err )
+}
+
+export function changeGroupName(oldname,newName) {
+    const url = 'http://localhost:8080/groups/{id}';
+    const request = {
+        oldName:oldname,
+        newName:newName
+    }
+    return fetch(url, {
+        method: 'PATCH',
+        body: JSON.stringify(request),
+        headers: {
+            'content-type': 'application/json; charset=utf-8'
+        }
+    })
+        .then((res) => res.json())
+        .catch((err) => err);
 }

@@ -23,7 +23,6 @@ class TraineeList extends Component {
         }
     }
 
-
     componentDidMount() {
         fetchTrainees()
             .then((response) => {
@@ -145,6 +144,18 @@ class TraineeList extends Component {
         addTrainee(this.state.trainee)
             .then(res => console.log(res))
     };
+
+    componentDidUpdate() {
+        fetchTrainees()
+            .then((response) => {
+                this.setState({
+                    trainees:response
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
 
     handleCancel = e => {
         console.log(e);
