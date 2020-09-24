@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Group.scss';
-import {autoGroup, getGroup} from "../utils/http";
+import {autoGroup, changeGroupName, getGroup} from "../utils/http";
 
 class Group extends Component {
     state = {
@@ -20,6 +20,26 @@ class Group extends Component {
         event.preventDefault();
         if (event.keyCode === 13){
 
+        }
+    }
+
+    handleChangeGroupName = (name, event) => {
+        let groups = this.state.groups
+        if (event.keyCode === 13) {
+            changeGroupName(name, event.target.value.trim())
+                .then((res) => {
+                    if (!res) {
+                        this.setState({
+                            groups: res
+                        })
+                    }
+                    else {
+                        location.reload();
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         }
     }
 

@@ -53,10 +53,10 @@ export function getGroup() {
         .catch((err) => err )
 }
 
-export function changeGroupName(oldname,newName) {
+export function changeGroupName(oldName,newName) {
     const url = 'http://localhost:8080/groups/{id}';
     const request = {
-        oldName:oldname,
+        oldName:oldName,
         newName:newName
     }
     return fetch(url, {
