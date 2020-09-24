@@ -1,0 +1,17 @@
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1{
+    margin-left: 20px;
+  }
+
+  button{
+    margin-right: 20px;
+    height: 30px;
+    width:130px;
+    background-color: #ea5455;
+    border: none;
+  }
+}
