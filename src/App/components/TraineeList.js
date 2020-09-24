@@ -20,24 +20,6 @@ class TraineeList extends Component {
             })
     }
 
-    handleNameChange = (event) => {
-        this.setState({
-            name:event.target.value,
-        })
-    }
-
-    handleAddTrainee = (event) => {
-        event.preventDefault();
-        if (event.keyCode === 13){
-            addTrainee(this.state.name)
-                .then(date => this.setState({
-                    trainees:date,
-                    name:''
-                }))
-                .catch(err => console.log(err))
-        }
-    }
-
     render() {
         return (
             <div id='main'>
@@ -55,8 +37,6 @@ class TraineeList extends Component {
                         placeholder="+添加学员"
                         className='name-input'
                         value={this.state.name}
-                        onChange={this.handleNameChange}
-                        onKeyUp={this.handleAddTrainee}
                     />
                 </div>
             </div>
