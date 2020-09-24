@@ -36,7 +36,6 @@ class TrainersList extends Component {
         }
     }
 
-
     render() {
         return(
             <div id='trainers'>

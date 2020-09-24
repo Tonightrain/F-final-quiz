@@ -16,9 +16,29 @@ h1{
   margin-left: 20px;
 }
 
-.name-input{
+.add-trainee{
   background-color: white;
   border:solid 1px gray;
   text-align: center;
+  color: gray;
 }
 
+.add-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.asterisk{
+  color: red;
+}
+
+.add-form input {
+  border:solid 1px gray;
+}
+
+.valid{
+  color:red;
+  margin-bottom:-5px;
+  margin-top: -5px;
+}

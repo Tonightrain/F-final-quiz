@@ -3,6 +3,7 @@ import './App.scss';
 import Group from "./components/Group";
 import TraineeList from "./components/TraineeList";
 import TrainerList from "./components/TrainersList";
+import "antd/dist/antd.css";
 
 class App extends Component {
     render() {

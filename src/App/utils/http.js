@@ -7,11 +7,12 @@ export function fetchTrainees() {
         })
 }
 
-export function addTrainee(name) {
+export function addTrainee(trainee) {
     const url = 'http://localhost:8080/trainees';
     return fetch(url,{
         method:'POST',
-        body:name
+        headers:{'Content-Type':'application/json;charset=utf-8'},
+        body:trainee
     })
         .then((response) => response.json())
         .catch((error) => error)
