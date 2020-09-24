@@ -1,4 +1,4 @@
-.head{
+.header{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,4 +15,50 @@
     background-color: #ea5455;
     border: none;
   }
+}
+
+.input-section{
+  display: flex;
+  background-color:#929aab;
+}
+
+.group-name {
+  text-align: center;
+  background-color:#929aab;
+  color: white;
+  border: none;
+  margin: 0;
+  width: 100%;
+  font-size: xx-large;
+}
+
+.group-teachers{
+  display: flex;
+  padding: 10px;
+  grid-gap: 50px;
+  margin-left: 50px;
+}
+
+.group-teacher{
+  width: 100px;
+}
+
+.group-students {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  grid-auto-rows: 30px;
+  grid-gap: 50px;
+  margin-left: 50px;
+}
+
+.group-section {
+  border: 1px solid #929aab;
+  margin: 40px 0;
+}
+
+.group-teacher,.group-student {
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 5px;
 }
