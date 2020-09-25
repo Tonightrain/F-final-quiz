@@ -24,6 +24,7 @@ class Group extends Component {
     }
 
     handleChangeGroupName = (name, event) => {
+      // TODO Feedback: 建议用解构
         let groups = this.state.groups
         if (event.keyCode === 13) {
             changeGroupName(name, event.target.value.trim())
@@ -34,6 +35,7 @@ class Group extends Component {
                         })
                     }
                     else {
+                      // TODO Feedback: 不建议用reload去刷新页面，在React中页面的render是通过state的改变去触发的
                         location.reload();
                     }
                 })
@@ -48,12 +50,14 @@ class Group extends Component {
         return (
             <div className='group-section'>
                 <div className="input-section">
-                    <input className='group-name' onKeyUp={this.handleChangeGroupName.bind(this, group.name)} defaultValue={group.name}></input>
+                  {/*// TODO Feedback:不建议在这里bind this*/}
+                  <input className='group-name' onKeyUp={this.handleChangeGroupName.bind(this, group.name)} defaultValue={group.name}></input>
                     <div className='group-teachers'>
                         {
                             group.trainerList.map((trainer) => (
                                 <div key={trainer.id} className='group-teacher'>
-                                    <label>{trainer.id}. </label>
+                                  {/*// TODO Feedback:不应该使用label标签*/}
+                                  <label>{trainer.id}. </label>
                                     {trainer.name}
                                 </div>
                             ))
@@ -76,6 +80,7 @@ class Group extends Component {
 
     render() {
         return (
+          // TODO Feedback: 语义标签使用不合理
             <div className="head">
                 <div className="header">
                     <h1>分组列表</h1>

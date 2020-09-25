@@ -1,4 +1,5 @@
 export function fetchTrainees() {
+    // TODO Feedback: 应该是未分组的学员
     const url = 'http://localhost:8080/trainees';
     return fetch(url)
         .then((response) => response.json())
@@ -59,6 +60,7 @@ export function changeGroupName(oldName,newName) {
         oldName:oldName,
         newName:newName
     }
+    // TODO Feedback: 为什么要patch oldName呢？
     return fetch(url, {
         method: 'PATCH',
         body: JSON.stringify(request),

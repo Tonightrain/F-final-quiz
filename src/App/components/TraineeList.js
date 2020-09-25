@@ -4,6 +4,7 @@ import './Trainlist.scss';
 import { Modal } from "antd";
 
 class TraineeList extends Component {
+    // TODO Feedback: 组件中维护了这么多的state，本身就是bad smell，应该考虑提取组件
     state = {
         trainees:[],
         name:'',
@@ -59,6 +60,7 @@ class TraineeList extends Component {
         });
     };
 
+    // TODO Feedback: 很多的handle方法，考虑提取方法去重
     handleName = (event) => {
         let trainee = this.state.trainee;
         trainee.name = event.target.value;
@@ -100,6 +102,7 @@ class TraineeList extends Component {
     }
 
     handleValid = () => {
+        // TODO Feedback: 长方法，很多重复
         this.state.trainee.name === null ? this.setState({
             nameValid:false,
         }) : this.setState({
